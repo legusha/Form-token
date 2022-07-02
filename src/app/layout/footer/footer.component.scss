@@ -1,0 +1,22 @@
+.link-wrap {
+  gap: 0 30px;
+  & .link-to-page {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 132%;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+  }
+}
+.copyright {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #000000;
+}
+.contact-use {
+  @extend .copyright
+}

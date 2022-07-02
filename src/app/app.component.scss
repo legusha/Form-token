@@ -1,0 +1,40 @@
+:host {
+  font-family: -apple-system, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+
+.app-header, .app-footer {
+  padding: 0 111px;
+}
+
+.app-footer {
+  margin-bottom: 30px;
+}
+
+.content {
+  margin-top: 80px;
+}
