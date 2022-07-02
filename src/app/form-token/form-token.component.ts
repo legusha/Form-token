@@ -9,8 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class FormTokenComponent implements OnInit {
   companyList = [
     { name: 'My company' },
-    { name: 'Other company' },
-    { name: 'Another company' },
+    { name: 'Company 2' },
+    { name: 'Company 3' },
   ]
 
   form = new FormGroup({

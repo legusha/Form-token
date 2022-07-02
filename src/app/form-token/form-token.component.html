@@ -1,11 +1,50 @@
 <aside>
   <app-form-title></app-form-title>
-  <form [formGroup]="form">
+  <form [formGroup]="form" class="form-token">
     <label>Company</label>
-    <select  class="form-select" aria-label="Default select example" formControlName="company">
+    <select  class="form-select form-token-select-company mb-3" aria-label="Default select" formControlName="company">
       <option *ngFor="let company of companyList" [ngValue]="company">
         {{ company.name }}
       </option>
     </select>
+
+    <div class="form-group mb-3">
+      <label for="token-name" class="label-input">Token name</label>
+      <input type="text" class="form-control" placeholder="Enter token name" id="token-name">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="token-symbol" class="label-input">Symbol</label>
+      <input type="text" class="form-control" placeholder="Enter token symbol" id="token-symbol">
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="token-name" class="label-input">Maximum token supply</label>
+      <input type="text" class="form-control" placeholder="Enter token supply" id="token-supply">
+    </div>
+
+    <div class="d-flex mb-3">
+      <input type="radio" class="btn-check" name="options-outlined" id="enthereum" autocomplete="off" checked>
+      <label class="btn btn-outline-danger form-token-btn-danger" for="enthereum">Enthereum</label>
+
+      <input type="radio" class="btn-check" name="options-outlined" id="binance" autocomplete="off">
+      <label class="btn btn-outline-secondary form-token-btn-secondary ms-2" for="binance">Binance Smart Chain</label>
+    </div>
+
+    <div class="form-token-supply">
+      <label class="label-input" for="form-token-supply">Supply</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form-token-supply">
+        <label class="form-check-label" for="form-token-supply">
+          Enable
+        </label>
+      </div>
+    </div>
+
+
+    <div class="form-token-submit">
+      <button type="submit" class="btn btn-danger">SAVE DRAFT</button>
+    </div>
+
   </form>
 </aside>
