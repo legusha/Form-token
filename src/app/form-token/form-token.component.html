@@ -1,0 +1,11 @@
+<aside>
+  <app-form-title></app-form-title>
+  <form [formGroup]="form">
+    <label>Company</label>
+    <select  class="form-select" aria-label="Default select example" formControlName="company">
+      <option *ngFor="let company of companyList" [ngValue]="company">
+        {{ company.name }}
+      </option>
+    </select>
+  </form>
+</aside>
