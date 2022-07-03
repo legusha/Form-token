@@ -2,7 +2,14 @@
   <app-header class="app-header d-flex"></app-header>
 
   <div class="content flex-grow-1" role="main">
-    <app-form></app-form>
+    <app-form-title
+      [actionText]="formTokenTitle">
+    </app-form-title>
+    <app-form-token
+      *ngIf="formTokenCreate; else elseBlock"
+      (eventFormSubmit)='eventTokenCreate($event)'>
+    </app-form-token>
+    <ng-template #elseBlock>123</ng-template>
   </div>
 
   <app-footer class="app-footer"></app-footer>

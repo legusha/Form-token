@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Token } from './token.type';
-
-enum Blockchain {
-  ethereum = 1,
-  bsc = 2,
-}
+import { Token, CurrencyList } from '../types/token.type';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +10,13 @@ export class TokenService {
     name: '',
     symbol: '',
     maxSupply: 1,
-    blockchain: Blockchain.ethereum,
+    currencyType: 'ETN',
     supply: true
+  }
+
+  currencyList: CurrencyList = {
+    'ETN': { name: "Ethereum" },
+    'BSC': { name: "Binance Smart Chain" }
   }
 
   constructor() { }

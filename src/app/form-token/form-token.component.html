@@ -1,6 +1,5 @@
 <aside>
-  <app-form-title></app-form-title>
-  <form [formGroup]="form" class="form-token">
+  <form [formGroup]="form" class="form-token" (ngSubmit)="onSubmit()">
     <label>Company</label>
     <select  class="form-select form-token-select-company mb-3" aria-label="Default select" formControlName="company">
       <option *ngFor="let company of companyList" [ngValue]="company">
@@ -44,12 +43,43 @@
       >
     </div>
 
-    <div class="d-flex mb-3">
-      <input type="radio" class="btn-check" name="options-outlined" id="enthereum" autocomplete="off" checked>
-      <label class="btn btn-outline-danger form-token-btn-danger" for="enthereum">Ethereum</label>
 
-      <input type="radio" class="btn-check" name="options-outlined" id="binance" autocomplete="off">
-      <label class="btn btn-outline-secondary form-token-btn-secondary ms-2" for="binance">Binance Smart Chain</label>
+    <div class="d-flex mb-3">
+      <input
+        type="radio"
+        class="btn-check"
+        id="enthereum"
+        autocomplete="off"
+        formControlName="currencyType"
+        name="currencyType"
+        value="ETN"
+      >
+      <label
+        class="btn btn-outline-secondary form-token-btn-secondary"
+        [class.btn-outline-danger]="form.controls.currencyType.value === 'ETN'"
+        [class.form-token-btn-danger]="form.controls.currencyType.value === 'ETN'"
+        for="enthereum"
+      >
+        Ethereum
+      </label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        id="binance"
+        autocomplete="off"
+        formControlName="currencyType"
+        name="currencyType"
+        value="BSC"
+      >
+      <label
+        class="btn btn-outline-secondary form-token-btn-secondary ms-2"
+        [class.btn-outline-danger]="form.controls.currencyType.value === 'BSC'"
+        [class.form-token-btn-danger]="form.controls.currencyType.value === 'BSC'"
+        for="binance"
+      >
+        Binance Smart Chain
+      </label>
     </div>
 
     <div class="form-token-supply">
@@ -70,7 +100,13 @@
 
 
     <div class="form-token-submit">
-      <button type="submit" class="btn btn-danger">SAVE DRAFT</button>
+      <button
+        type="submit"
+        class="btn btn-danger"
+        [disabled]="form.invalid"
+      >
+        SAVE DRAFT
+      </button>
     </div>
 
   </form>

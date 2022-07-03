@@ -1,29 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { TokenService } from '../services/token.service'
-// import { Token } from "../services/token.type";
-import { Company } from '../services/company.type'
-import { CompanyService } from "../services/company.service";
+import { CompanyService } from '../services/company.service';
+import { Company } from '../types/company.type'
+import { FormToken } from '../types/form-token.type';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-form-token',
   templateUrl: './form-token.component.html',
   styleUrls: ['./form-token.component.scss'],
 })
+
 export class FormTokenComponent implements OnInit {
   companyList: Company[] = [];
+  public form: FormToken;
 
-  public form: FormGroup<{
-    name: FormControl<string | null>,
-    symbol: FormControl<string | null>,
-    maxSupply: FormControl<number | null>,
-    blockchain: FormControl<number | null>,
-    supply: FormControl<boolean | null>,
-    company: FormControl<Company | null>,
-  }>;
+  @Output() eventFormSubmit = new EventEmitter();
 
   constructor(private tokenService: TokenService, companyService: CompanyService) {
     this.companyList = companyService.companyList;
+
     this.form = new FormGroup({
       name: new FormControl(tokenService.token.name, [
           Validators.required,
@@ -37,13 +33,15 @@ export class FormTokenComponent implements OnInit {
         Validators.required,
         Validators.min(1)
       ]),
-      blockchain: new FormControl(tokenService.token.blockchain),
+      currencyType: new FormControl(tokenService.token.currencyType),
       supply: new FormControl(tokenService.token.supply),
       company: new FormControl(companyService.companyDefault),
     });
   }
 
-  ngOnInit(): void {
+  onSubmit() {
+    this.eventFormSubmit.emit(this.form.value);
   }
 
+  ngOnInit(): void {}
 }

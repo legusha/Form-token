@@ -70,12 +70,12 @@
 
 
   & input[type="radio"] + label.form-token-btn-danger {
-    color: #C50000;
+    color: #C50000!important;;
   }
 
   input[type="radio"]:checked + label.form-token-btn-danger {
-    background: #C50000;
-    color: white;
+    background: #C50000 !important;
+    color: white!important;
   }
 
   .form-token-btn-secondary {
