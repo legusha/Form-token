@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormToken } from './types/form-token.type';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'steal_talk';
+  formTokenTitle = 'Create your own crypto token';
+  formTokenCreate = true
+  formToken: FormToken | null = null
+
+  eventTokenCreate(formToken: FormToken) {
+    this.formTokenTitle = 'Your crypto token data';
+    this.formToken = formToken;
+    this.formTokenCreate = false;
+  }
 }

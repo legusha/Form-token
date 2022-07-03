@@ -1,0 +1,113 @@
+<aside>
+  <form [formGroup]="form" class="form-token" (ngSubmit)="onSubmit()">
+    <label>Company</label>
+    <select  class="form-select form-token-select-company mb-3" aria-label="Default select" formControlName="company">
+      <option *ngFor="let company of companyList" [ngValue]="company">
+        {{ company.name }}
+      </option>
+    </select>
+
+    <div class="form-group mb-3">
+      <label for="token-name" class="label-input">Token name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter token name"
+        id="token-name"
+        formControlName="name"
+        [class.is-invalid]="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)"
+      >
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="token-symbol" class="label-input">Symbol</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter token symbol"
+        id="token-symbol"
+        formControlName="symbol"
+        [class.is-invalid]="form.controls.symbol.invalid && (form.controls.symbol.dirty || form.controls.symbol.touched)"
+      >
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="token-name" class="label-input">Maximum token supply</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter token supply"
+        id="token-supply"
+        formControlName="maxSupply"
+        [class.is-invalid]="form.controls.maxSupply.invalid && (form.controls.maxSupply.dirty || form.controls.maxSupply.touched)"
+      >
+    </div>
+
+
+    <div class="d-flex mb-3">
+      <input
+        type="radio"
+        class="btn-check"
+        id="enthereum"
+        autocomplete="off"
+        formControlName="currencyType"
+        name="currencyType"
+        value="ETN"
+      >
+      <label
+        class="btn btn-outline-secondary form-token-btn-secondary"
+        [class.btn-outline-danger]="form.controls.currencyType.value === 'ETN'"
+        [class.form-token-btn-danger]="form.controls.currencyType.value === 'ETN'"
+        for="enthereum"
+      >
+        Ethereum
+      </label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        id="binance"
+        autocomplete="off"
+        formControlName="currencyType"
+        name="currencyType"
+        value="BSC"
+      >
+      <label
+        class="btn btn-outline-secondary form-token-btn-secondary ms-2"
+        [class.btn-outline-danger]="form.controls.currencyType.value === 'BSC'"
+        [class.form-token-btn-danger]="form.controls.currencyType.value === 'BSC'"
+        for="binance"
+      >
+        Binance Smart Chain
+      </label>
+    </div>
+
+    <div class="form-token-supply">
+      <label class="label-input" for="form-token-supply">Supply</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="form-token-supply"
+          formControlName="supply"
+        >
+        <label class="form-check-label" for="form-token-supply">
+          {{ form.controls.supply.value ? 'Enable' : 'Disable' }}
+        </label>
+      </div>
+    </div>
+
+
+    <div class="form-token-submit">
+      <button
+        type="submit"
+        class="btn btn-danger"
+        [disabled]="form.invalid"
+      >
+        SAVE DRAFT
+      </button>
+    </div>
+
+  </form>
+</aside>

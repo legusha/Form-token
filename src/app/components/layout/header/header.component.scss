@@ -1,0 +1,18 @@
+.company-title-wrap {
+  margin-left: 0.5rem;
+  & .company-title {
+      color: #48588D;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+      letter-spacing: 0.03em;
+  }
+
+  &  .company-subtitle {
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 13px;
+      letter-spacing: 0.2em;
+      color: #ACACAC;
+  }
+}
