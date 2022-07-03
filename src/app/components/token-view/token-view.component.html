@@ -1,0 +1,31 @@
+<section class="app-token-view d-flex flex-column">
+  <div class="d-inline-flex align-items-center mb-3">
+    <p class="m-0">Company:&nbsp;</p>
+    <p class="m-0">{{this.formTokenView?.company?.name}}</p>
+  </div>
+
+  <div class="d-inline-flex align-items-center mb-3">
+    <p class="m-0">Token name:&nbsp;</p>
+    <p class="m-0">{{this.formTokenView?.name}}</p>
+  </div>
+
+  <div class="d-inline-flex align-items-center mb-3">
+    <p class="m-0">Symbol:&nbsp;</p>
+    <p class="m-0">{{this.formTokenView?.symbol}}</p>
+  </div>
+
+  <div class="d-inline-flex align-items-center mb-3">
+    <p class="m-0">Maximum token supply:&nbsp;</p>
+    <p class="m-0">{{this.formTokenView?.maxSupply}}</p>
+  </div>
+
+  <div class="d-inline-flex align-items-center mb-3">
+    <p class="m-0">Currency:&nbsp;</p>
+    <p class="m-0">{{this.formTokenView?.currency?.name}}</p>
+  </div>
+
+  <div class="d-inline-flex align-items-center mb-3">
+    <p class="m-0">Supply:&nbsp;</p>
+    <p class="m-0">{{this.formTokenView?.supply ? 'Enable' : 'Disable'}}</p>
+  </div>
+</section>

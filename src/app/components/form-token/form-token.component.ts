@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { TokenService } from '../../services/token.service'
 import { CompanyService } from '../../services/company.service';
 import { Company } from '../../types/company.type'
-import { FormToken } from '../../types/form-token.type';
+import { FormTokenGroup } from '../../types/form-token.type';
 
 @Component({
   selector: 'app-form-token',
@@ -13,7 +13,7 @@ import { FormToken } from '../../types/form-token.type';
 
 export class FormTokenComponent implements OnInit {
   companyList: Company[] = [];
-  public form: FormToken;
+  public form: FormTokenGroup;
 
   @Output() eventFormSubmit = new EventEmitter();
 

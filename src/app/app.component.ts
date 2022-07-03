@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormToken} from './types/form-token.type';
+import { FormToken } from './types/form-token.type';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,11 @@ import {FormToken} from './types/form-token.type';
 export class AppComponent {
   formTokenTitle = 'Create your own crypto token';
   formTokenCreate = true
+  formToken: FormToken | null = null
 
   eventTokenCreate(formToken: FormToken) {
     this.formTokenTitle = 'Your crypto token data';
-    this.formTokenCreate = false
-    console.log(formToken)
+    this.formToken = formToken;
+    this.formTokenCreate = false;
   }
 }

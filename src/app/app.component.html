@@ -9,7 +9,12 @@
       *ngIf="formTokenCreate; else elseBlock"
       (eventFormSubmit)='eventTokenCreate($event)'>
     </app-form-token>
-    <ng-template #elseBlock>123</ng-template>
+
+    <ng-template #elseBlock>
+      <app-token-view
+        [formToken]="formToken">
+      </app-token-view>
+    </ng-template>
   </div>
 
   <app-footer class="app-footer"></app-footer>

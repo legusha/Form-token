@@ -8,6 +8,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FormTokenComponent } from './components/form-token/form-token.component';
 import { FormTitleComponent } from './components/form-token-title/form-token-title.component';
+import { TokenViewComponent } from './components/token-view/token-view.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormTitleComponent } from './components/form-token-title/form-token-tit
     FooterComponent,
     HeaderComponent,
     FormTitleComponent,
-    FormTokenComponent
+    FormTokenComponent,
+    TokenViewComponent
   ],
   imports: [
     BrowserModule,
