@@ -43,6 +43,16 @@
     box-shadow: none;
   }
 
+  & input::-webkit-outer-spin-button,
+  & input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & input.is-invalid {
+    border-color: #dc3545;;
+  }
+
 
   & .form-token-btn {
     border-radius: 28px;

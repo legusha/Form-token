@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormTitleComponent } from './form-title.component';
+import { FormTitleComponent } from './form-token-title.component';
 
 describe('FormTitleComponent', () => {
   let component: FormTitleComponent;

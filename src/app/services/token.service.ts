@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Company } from './token.type';
+import { Token } from './token.type';
+
+enum Blockchain {
+  ethereum = 1,
+  bsc = 2,
+}
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class TokenService {
-  companyList: Company[] = [
-    { name: 'My company' },
-    { name: 'Company 2' },
-    { name: 'Company 3' },
-  ]
-  companyDefault: Company = this.companyList[0];
-
+  token: Token = {
+    name: '',
+    symbol: '',
+    maxSupply: 0,
+    blockchain: Blockchain.ethereum,
+    supply: true
+  }
 
   constructor() { }
 }
