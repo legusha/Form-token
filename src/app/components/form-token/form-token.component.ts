@@ -1,9 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { TokenService } from '../services/token.service'
-import { CompanyService } from '../services/company.service';
-import { Company } from '../types/company.type'
-import { FormToken } from '../types/form-token.type';
+import { TokenService } from '../../services/token.service'
+import { CompanyService } from '../../services/company.service';
+import { Company } from '../../types/company.type'
+import { FormToken } from '../../types/form-token.type';
 
 @Component({
   selector: 'app-form-token',
