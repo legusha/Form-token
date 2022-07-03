@@ -14,7 +14,7 @@ export class TokenService {
   token: Token = {
     name: '',
     symbol: '',
-    maxSupply: 0,
+    maxSupply: 1,
     blockchain: Blockchain.ethereum,
     supply: true
   }

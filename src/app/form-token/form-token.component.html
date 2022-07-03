@@ -16,7 +16,7 @@
         placeholder="Enter token name"
         id="token-name"
         formControlName="name"
-        [class.is-invalid]="form.controls.name.invalid"
+        [class.is-invalid]="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)"
       >
     </div>
 
@@ -28,7 +28,7 @@
         placeholder="Enter token symbol"
         id="token-symbol"
         formControlName="symbol"
-        [class.is-invalid]="form.controls.symbol.invalid"
+        [class.is-invalid]="form.controls.symbol.invalid && (form.controls.symbol.dirty || form.controls.symbol.touched)"
       >
     </div>
 
@@ -40,7 +40,7 @@
         placeholder="Enter token supply"
         id="token-supply"
         formControlName="maxSupply"
-        [class.is-invalid]="form.controls.maxSupply.invalid"
+        [class.is-invalid]="form.controls.maxSupply.invalid && (form.controls.maxSupply.dirty || form.controls.maxSupply.touched)"
       >
     </div>
 
@@ -60,9 +60,10 @@
           type="checkbox"
           value=""
           id="form-token-supply"
+          formControlName="supply"
         >
         <label class="form-check-label" for="form-token-supply">
-          Enable
+          {{ form.controls.supply.value ? 'Enable' : 'Disable' }}
         </label>
       </div>
     </div>
